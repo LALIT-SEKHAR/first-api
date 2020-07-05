@@ -7,6 +7,8 @@ const router = express.Router();
 
 // const port = 3000;
 
+app.use(express.static('public'));
+
 router.get('/', (req, res) => {
     res.send(`<h1>Home page</h1>`)
 });
@@ -25,3 +27,7 @@ module.exports.handler = serverless(app);
 
 // app.listen(port, () => console.log(`http://localhost:${port}/`)
 // );
+
+
+//https://pensive-neumann-14a804.netlify.app/.netlify/functions/app/user
+//pensive-neumann-14a804
