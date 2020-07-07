@@ -7,7 +7,7 @@ const router = express.Router();
 
 // const port = 3000;
 
-app.use(express.static('public'));
+app.use('/static', express.static('public'));
 
 router.get('/', (req, res) => {
     res.send(`<h1>Home page</h1>`)
@@ -21,7 +21,8 @@ router.get('/user', (req, res) => {
     });
 });
 
-app.use('/.netlify/functions/app', router);
+app.use('/app', router);
+//.netlify/functions/app
 
 module.exports.handler = serverless(app);
 
